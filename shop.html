@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlebJeb</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=page_info" />
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="landing.html">KhmerKits</a></div>
+            <input type="radio" name="slider" id="menu-btn">
+            <input type="radio" name="slider" id="close-btn">
+            <ul class="nav-links">
+                <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                <li><a href="shop.html">SHOP</a></li>
+                <li>
+                    <a href="#" class="desktop-item">COLLECTIONS</a>
+                    <input type="checkbox" id="showMega">
+                    <label for="showMega" class="mobile-item">Mega Menu</label>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <img src="picture/bestpic.jpg" alt="">
+                            </div>
+                            <div class="row">
+                              <header>League</header>
+                              <ul class="mega-links">
+                                  <li><a href="PremierLeague.html">Premier League</a></li>
+                                  <li><a href="LaLiga.html">La Liga</a></li>
+                                  <li><a href="SeriaA.html">Seria A</a></li>
+                                  <li><a href="Budesliga.html">Bundesliga</a></li>
+                                  <li><a href="Otherleague.html">Others</a></li>
+                              </ul>
+                          </div>
+                          <div class="row">
+                              <header>Retro</header>
+                              <ul class="mega-links">
+                                  <li><a href="Acmilan.html">AC Milan</a></li>
+                                  <li><a href="Realmadrid.html">Real MAdrid</a></li>
+                                  <li><a href="Barcelona.html">Barcelona</a></li>
+                                  <li><a href="Liverpool.html">Liverpool</a></li>
+                                  <li><a href="Manchester.html">Manchester United</a></li>
+                                  <li><a href="Juventus.html">Juventus</a></li>
+                                  <li><a href="Otherretro.html">Others</a></li>
+                              </ul>
+                          </div>
+                          <div class="row">
+                              <header>National Team</header>
+                              <ul class="mega-links">
+                                  <li><a href="Argentina.html">Argentina</a></li>
+                                  <li><a href="France.html">France</a></li>
+                                  <li><a href="Portugal.html">Portugal</a></li>
+                                  <li><a href="Germany.html">Germany</a></li>
+                                  <li><a href="Spain.html">Spain</a></li>
+                                  <li><a href="Brazil.html">Brazil</a></li>
+                                  <li><a href="Japan.html">Japan</a></li>
+                              </ul>
+                          </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="about.html">ABOUT</a></li>             
+            </ul>  
+            <div class="icon">
+                <a href="login.html" class="icon-button"><i class="fa-solid fa-circle-user"></i></a>
+                <a href="shoppingcard.html" class="icon-button"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>                       
+        </div>
+    </nav>
+      
+    <div class="bottom-nav">
+        <a href="landing.html" class="nav-icon">
+            <i class="fa-solid fa-house"></i>
+        </a>
+        <a href="#" class="nav-icon" onclick="toggleSearchPopup()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+        <a href="login.html" class="nav-icon">
+            <i class="fa-regular fa-user"></i>
+        </a>    
+    </div>
+    <div class="search-popup" id="search-popup">
+        <div class="search-container">
+            <input type="text" placeholder="Search by keyword" id="search-input">
+            <button class="close-btn" onclick="toggleSearchPopup()">X</button>
+        </div>
+    </div>
+    <script>
+        function toggleSearchPopup() {
+            const searchPopup = document.getElementById("search-popup");
+            searchPopup.classList.toggle("active");
+        }
+    </script>
+    <div class="Alljerseys">
+        <img src="picture/shop1.jpg" alt="jerseys">
+        <h1>ALL JERSEYS</h1>
+    </div>
+  <div class="filter-icon" id="filter-icon">
+    ☰
+  </div>
+  <div class="filter-sidebar" id="filter-sidebar">
+    <button class="filter-close" id="filter-close">✖</button>
+    <h2>Filters</h2>
+    <div class="filter-section">
+      <label for="sort-by">Sort by</label>
+      <select id="sort-by">
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+      </select>
+    </div>
+    <div class="filter-section">
+      <label>
+        <input type="checkbox" id="in-stock"> In stock only
+      </label>
+    </div>
+    <div class="filter-section">
+      <label for="collection">Collection</label>
+      <select id="collection">
+        <option>All Collections</option>
+        <option>League</option>
+        <option>Retro</option>
+        <option>National Team</option>
+      </select>
+    </div>
+    <button class="apply-button">Apply</button>
+  </div>
+  <script>
+    const filterIcon = document.getElementById('filter-icon');
+    const filterSidebar = document.getElementById('filter-sidebar');
+    const filterClose = document.getElementById('filter-close');
+    filterIcon.addEventListener('click', () => {
+      filterSidebar.classList.add('open');
+      filterIcon.classList.add('hidden'); 
+    });
+
+    filterClose.addEventListener('click', () => {
+      filterSidebar.classList.remove('open');
+      filterIcon.classList.remove('hidden'); 
+    });
+  </script>
+  <div class="display1">
+    <div class="Filer-p">
+      <p>Filter</p>
+    </div>
+    <div class="Sortby">
+
+      <div class="dropdown">
+        <button class="dropdown-button">Sort by: Featured <span class="arrow">▼</span></button>
+        <ul class="dropdown-menu">
+          <li>Featured</li>
+          <li>Best selling</li>
+          <li>Alphabetically, A-Z</li>
+          <li>Alphabetically, Z-A</li>
+          <li>Price, low to high</li>
+          <li>Price, high to low</li>
+          <li>Date, old to new</li>
+          <li>Date, new to old</li>
+        </ul>
+      </div>      
+    </div>
+  </div>
+  <script>
+    document.querySelector('.dropdown-button').addEventListener('click', function () {
+      const menu = document.querySelector('.dropdown-menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', function (e) {
+      const dropdown = document.querySelector('.dropdown');
+      if (!dropdown.contains(e.target)) {
+        document.querySelector('.dropdown-menu').style.display = 'none';
+      }
+    });
+
+  </script>
+<div id="page1" class="page-content active">
+  <div class="container">
+    <div class="item">
+        <a href="shirt1.html"><img src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/462603233_1107959617996987_7602136492595329439_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=GfvKxmfJwdoQ7kNvgFx_kPq&_nc_zt=23&_nc_ht=scontent.fpnh19-1.fna&_nc_gid=AzPXiiB2PQawMEJaaPd8hFS&oh=00_AYDicRUGbfvuldaRGI7gNNHKqQWYPKyaPcyd_JdSvTtuCg&oe=675C67CB" alt="1998 Inter Milan Home Retro kit " ></a>
+        <h3>$45.00</h3>
+        <p><strong>Cambodia Home Jersey </strong></p>
+    </div>
+    <div class="item">
+        <a href="shirt2.html"><img src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/463027511_1111063561019926_574465386252491651_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6A2UtN22qG4Q7kNvgHRItzl&_nc_zt=23&_nc_ht=scontent.fpnh19-1.fna&_nc_gid=AoYsIejj7hHIticqzuVCymC&oh=00_AYAUPe6OuL6Q952czwDUkr0bWNXorMq5ZzC-eYAM8BnJfQ&oe=675C68AE" alt="Brazil WorldCup 2002 retro kit "></a>
+        <h3>$45.00</h3>
+        <p><strong>Cambodia Away Jersey</strong></p>
+    </div>
+    <div class="item">
+        <a href="shirt3.html"><img src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/463627850_1114861220640160_418388204492857121_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=EdNzsMxebEYQ7kNvgH9lQ3A&_nc_zt=23&_nc_ht=scontent.fpnh19-1.fna&_nc_gid=AG5ksXboTJRJQlyoSbIrObt&oh=00_AYA1dhV4Jl6zqql5G9HAdNWJx08e8ehhDqhOCvd3WHgqiQ&oe=675C6678" alt="Mental Health Awareness Jersey"></a>
+        <h3>$45.00</h3>
+        <p><strong>Cambodia goalkeeper's Home Jersey</strong></p>
+    </div>
+    <div class="item">
+        <a href="shirt4.html"><img src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/463304741_1112051320921150_5968192218143570033_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=x6w5QeA-a7MQ7kNvgGW2pe4&_nc_zt=23&_nc_ht=scontent.fpnh19-1.fna&_nc_gid=AFEcdZCjtej3fxVyrK57HGB&oh=00_AYDAG_dAzUy5_QvKJKk4UTsbxeRkoDIDNmaBHxArDFhELQ&oe=675C77F6" alt="River Plate 1994 Jersey"></a>
+        <h3>$44.75</h3>
+        <p><strong>Cambodia goalkeeper's Away Jersey</strong></p>
+    </div>
+    <div class="item">
+        <a href="shirt5.html"><img src="https://i.pinimg.com/736x/5d/98/05/5d98051427b1f7a2070b2c9e2ebb26b3.jpg" alt="1998 Inter Milan Home Retro kit " ></a>
+        <h3>$30</h3>
+        <p><strong>Lazio Home 1999/2000</strong></p>
+    </div>
+    <div class="item">
+        <a href=""><img src="https://i.pinimg.com/736x/94/28/2b/94282bf351c74d0792889af5b7950d59.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+        <h3>$30</h3>
+        <p><strong>Brazil WorldCup 2002 retro kit </strong></p>
+    </div>
+    <div class="item">
+        <a href="p3.html"><img src="https://i.pinimg.com/736x/b9/66/81/b96681a8ac995ccb94de6a36bb69e09b.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$28</h3>
+        <p><strong>Vintage 04/05 Ac Milan away kit</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/e0/ac/1e/e0ac1e01ef7081c22850bf76fbb8ffa0.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>Liverpool II 93/95</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/474x/11/1b/38/111b386f2713e42dfe48e6711384414f.jpg" alt="AS Roma 1993 Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>Primera equipación 96/97</strong></p>
+    </div>
+    <div class="item">
+        <a href="p3.html"><img src="https://i.pinimg.com/736x/e9/01/7c/e9017c31da9528309aaf82973b99a1fb.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$28</h3>
+        <p><strong>England 1997-98 Home Kit</strong></p>
+    </div>
+    <div class="item">
+        <a href="jerseypage.html"><img src="https://i.pinimg.com/736x/89/94/1c/89941c862d899e124bdbd840718a4534.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$30</h3>
+        <p><strong>Japan 98 world cup</strong></p>
+    </div>
+    <div class="item">
+        <a href="p8.html"><img src="https://i.pinimg.com/736x/27/59/68/275968b7e24e5902b637f6836e1153e9.jpg" alt="AS Roma 1993 Jersey"></a>
+        <h3>$22</h3>
+        <p><strong>Chelsea I - 2011/12</strong></p>
+    </div>
+    <div class="item">
+        <a href="p3.html"><img src="https://i.pinimg.com/736x/6f/32/8f/6f328f524871afb989bc4db74d4cd66c.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$28</h3>
+        <p><strong>Barcelona 2015</strong></p>
+    </div>
+    <div class="item">
+        <a href="p3.html"><img src="https://i.pinimg.com/736x/6d/39/e7/6d39e7c0ef1070d8c59942a276fda177.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$28</h3>
+        <p><strong>Barcelona 98-99</strong></p>
+    </div>
+    <div class="item">
+        <a href="jerseypage.html"><img src="https://i.pinimg.com/736x/23/01/41/230141cd114e2a1fd463d684b4c0d4ce.jpg" alt="AS Roma 1993 Jersey"></a>
+        <h3>$23</h3>
+        <p><strong>AC Milan Away 95/96</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/7d/a2/db/7da2dbed345f874fceba7de8420e34ad.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>Juventus 1997/98 Home Shirt</strong></p>
+    </div>
+    <div class="item">
+        <a href="jerseypage.html"><img src="https://i.pinimg.com/736x/b5/1e/a5/b51ea543db930801e9af229d9316ff4c.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$30</h3>
+        <p><strong>Jamaica 1998/99 Home Shirt</strong></p>
+    </div>
+    <div class="item">
+        <a href="jerseypage.html"><img src="https://i.pinimg.com/736x/3c/25/77/3c25776cbba8b5d0b47005b9d8e77370.jpg" alt="AS Roma 1993 Jersey"></a>
+        <h3>$30</h3>
+        <p><strong>Barcelona 1996/97 Away Shirt</strong></p>
+    </div>
+    <div class="item">
+        <a href="jerseypage.html"><img src="https://i.pinimg.com/736x/c0/66/ba/c066ba1df6fbd51078dcc6dd41506974.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$30</h3>
+        <p><strong>Venezia Retro kit</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/a6/9e/d2/a69ed204f293edc70da75892a03365b7.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$25</h3>
+        <p><strong> Camisola Retro Manchester United 2007/08</strong></p>
+    </div>
+    <div class="item">
+        <a href="p3.html"><img src="https://i.pinimg.com/736x/d2/76/f7/d276f7e848cddacf70ec6bec206454f8.jpg" alt="1998 Inter Milan Home Retro kit "></a>
+        <h3>$28</h3>
+        <p><strong> Camisa Retrô Manga Longa Real Madrid Casa 2002</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/2b/1b/94/2b1b94e4b080a6beb899c8defb37b8b3.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+        <h3>$25</h3>
+        <p><strong>Jersey Nike Arsenal 2011 Local</strong></p>
+    </div>
+    <div class="item">
+        <a href="jerseypage.html"><img src="https://i.pinimg.com/736x/bb/5e/7f/bb5e7f08f79600292de73f1900c1f6c5.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$30</h3>
+        <p><strong>France 1996 Home Shirt</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/83/63/f0/8363f098dcb6af74d9655962acf6bc33.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>Napoli 87/88 Away Retro Jersey Vintage</strong></p>
+    </div>
+    <div class="item">
+        <a href="p8.html"><img src="https://i.pinimg.com/736x/72/24/fc/7224fc4f16a9b917769f8abbb3bef315.jpg" alt="AS Roma 1993 Jersey"></a>
+        <h3>$22</h3>
+        <p><strong>Parma Away 1999/2000</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/4e/ca/c5/4ecac5a0b6fc0bf488e330f491853570.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>Santos I 11/12</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/d0/03/a5/d003a5202c7281c1573057009086b8c7.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>Real Madrid Retro Soccer Jersey Home Replica 2005/06</strong></p>
+    </div>
+    <div class="item">
+        <a href="jp4.html"><img src="https://i.pinimg.com/736x/5a/3e/be/5a3ebe775eaa2d087e1bc408820f4947.jpg" alt="AS Roma 1993 Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>Sweden 1994/95 Home Shirt</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/c9/01/10/c90110f97d10e5f01440ec8d93e6b0ca.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>AC Milan 1998/99 Football Shirt</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/16/c4/26/16c4266d16defc02f7d4493bbf62eb64.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>spain 2010</strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/76/bf/bb/76bfbbcbf2a5b83accd858d8f221d431.jpg" alt="AS Roma 1993 Jersey"></a>
+        <h3>$25</h3><p>
+        <strong>Retro jerseys Real Madrids shirt 07 08 09</strong></p>            
+    </div>
+    <div class="item">
+        <a href="jerseypage.html"><img src="https://i.pinimg.com/736x/b5/1e/a5/b51ea543db930801e9af229d9316ff4c.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$30</h3>
+        <p><strong>Jamaica Football Shirt 1998 </strong></p>
+    </div>
+    <div class="item">
+        <a href="p4.html"><img src="https://i.pinimg.com/736x/ef/eb/76/efeb764b29dd13accc8628eeaacf22b3.jpg" alt="AS Roma 1993 Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>Germany Away Kit 1996 Football Shirt Soccer Jersey Retro Vintage</strong></p>
+
+    </div>
+    <div class="item">
+        <a href="p8.html"><img src="https://i.pinimg.com/736x/25/95/41/259541bc2901093f8aedbfc247fb0361.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$22</h3>
+        <p><strong>Ajax 1995/96 Home Shirt</strong></p>
+
+    </div>
+    <div class="item">
+        <a href="jerseypage.html"><img src="https://i.pinimg.com/736x/dc/a5/5b/dca55bd3468ad1189e32fc20038eac1e.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$23</h3>
+        <p><strong> Arsenal FC 88-90 Home Football Kit</strong></p>
+    </div>
+    <div class="item">
+        <a href="nationalpage.html"><img src="https://i.pinimg.com/474x/7c/94/da/7c94dae35285554cdb1429e3c42624af.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$18</h3>
+        <p><strong>Brazil Away Jersey</strong></p>
+    </div>
+</div>
+</div> 
+<div id="page2" class="page-content">
+    <div class="container">
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/arsenalaway.jfif" alt="1998 Inter Milan Home Retro kit " ></a>
+            <h3>$30</h3>
+            <p><strong>Arsenal Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/arsenalhome.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Arsenal Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/astonvillahome.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Astonvilla Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/brightonHome.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Brighton Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/chelseaAway.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Chelsea Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/chelseaHome.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Chelsea Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/ChelseaThrid.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Chelsea Third 24/25</strong></p>
+        </div>
+        <div class="item">
+            <a href="p8.html"><img src="picture/LiverpoolHome (2).jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$22</h3>
+            <p><strong>Liverpool Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/liverpoolAway.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Liverpool Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/LiverpoolThird.jpeg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Liverpool Third 24/25</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/mancityaway.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$23</h3>
+            <p><strong>Mancity Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/mancityHone.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Mancity Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/mancitythird.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Mancity Third 24/25</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/ManuAway.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Manchester United Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/manuhome.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Manchester United Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/manuthird.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Manchester United Third 24/25</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/newcastleHome.jpg" alt="1998 Inter Milan Home Retro kit "></a>
+            <h3>$28</h3>
+            <p><strong>Newcastle United Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/newcastlethird.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$25</h3>
+            <p><strong>Newcastle United Third 24/25</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/spurAway.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Tottenham Hotspur Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/SpurThird.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Tottenham Hotspur Third 24/25</strong></p>
+        </div>
+        <div class="item">
+            <a href="p8.html"><img src="picture/westhamHome.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$22</h3>
+            <p><strong>Westham Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/atmadridhome.jpg" alt="1998 Inter Milan Home Retro kit " ></a>
+            <h3>$30</h3>
+            <p><strong>Atletico madrid Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/atmaridaway.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Atletico madrid Away Jersey </strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/barcelonaAway.jfif" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Barcelona Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/barcelonaHome.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Barcelona Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/barcelonaThird.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Barcelona Third Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/realbetis.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Real Betis</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/realmadridhome.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Real Madrid Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p8.html"><img src="picture/realmaridAway.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$22</h3>
+            <p><strong>Real Madrid Away Home</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/realmadridThird.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Real Madrid Third Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/sevillahome.jpeg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Sevilla Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/villarealHome.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$23</h3>
+            <p><strong>Villarreal Home Jersey</strong></p>
+        </div>
+    </div> 
+  </div>
+  <div id="page3" class="page-content">
+    <div class="container">
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/bayernaway.jpg" alt="1998 Inter Milan Home Retro kit " ></a>
+            <h3>$30</h3>
+            <p><strong>Bayern Munchen Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/bayernfirth.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Bayern Munchen Fourth Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/bayernhome.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Bayern Munchen Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/bayernThrid.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Bayern Munchen Third Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/dormunaway.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Dortmund Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/dortmunhome.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Dortmund Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/dortmunthird.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Dortmund Third Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p8.html"><img src="picture/leverkusenHome.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$22</h3>
+            <p><strong>Leverkusen Home Jersey</strong></p>
+        </div> 
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/AtalantaAway.jpg" alt="1998 Inter Milan Home Retro kit " ></a>
+            <h3>$30</h3>
+            <p><strong>Atalanta Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/AtalantaHome.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Atalanta Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/fioHome.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Fiorentina Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/interAay.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Inter Milan Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/interHome.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Inter Milan Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/interThird.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Inter Milan Third Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/juveAway.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Juventus Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p8.html"><img src="picture/juveHome.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$22</h3>
+            <p><strong>Juventus Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/juveThird.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Juventus Third Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/lazioHome.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Lazio Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/milanAway.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$23</h3>
+            <p><strong>AC Milan Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/milanHome.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>AC Milan Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/milanThird.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>AC Milan Third Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/NapoliAway.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Napoli Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/Napolihome.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Napoli Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/romaAway.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Roma Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/romaHome.jpg" alt="1998 Inter Milan Home Retro kit "></a>
+            <h3>$28</h3>
+            <p><strong>Roma Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/736x/49/58/6c/49586ce5d2a57d54e787c8189e818699.jpg" alt="1998 Inter Milan Home Retro kit " ></a>
+            <h3>$18</h3>
+            <p><strong>Argentina Home Jersey</strong></p>
+
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/736x/83/dc/72/83dc7261437e08a239936d92a329a3b5.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$18</h3>
+            <p><strong>Argentina Away Jersey</strong></p>
+
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/474x/4f/e4/e6/4fe4e67d1444bfc0f99063060e77b1d5.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$18</h3>
+            <p><strong>France Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/736x/4d/33/f4/4d33f4f92df4fd375bb44887d364ffbf.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$18</h3>
+            <p><strong>France Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/736x/93/c9/15/93c91515263f2f91913817af848da1fb.jpg" alt="1998 Inter Milan Home Retro kit " ></a>
+            <h3>$18</h3>
+            <p><strong>Portugal Home Jersey </strong></p>
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/474x/34/40/29/344029d3f65f9b14b1a78dab360916f0.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$18</h3>
+            <p><strong>Portugal Away Jersey </strong></p>
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/474x/94/35/95/94359590c08993a82603a2f21600e747.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$18</h3>
+            <p><strong>Germany Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/474x/b0/d7/ad/b0d7ad0dbd55f782ad012cbbf91dee2b.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$18</h3>
+            <p><strong>Germany Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/474x/84/92/25/849225c848a6efb9292eb0819d599c20.jpg" alt="1998 Inter Milan Home Retro kit " ></a>
+            <h3>$18</h3>
+            <p><strong>Spain Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/474x/56/b8/f9/56b8f9e37e929449c64afc84880c5a0d.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$18</h3>
+            <p><strong>Spain Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/474x/4e/29/cc/4e29ccf50a197b50a63d5cf2e23dc456.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$18</h3>
+            <p><strong>Brazil Home Jersey</strong></p>
+        </div>
+    </div>
+  </div>
+  <div id="page4" class="page-content">
+    <div class="container">
+        <div class="item">
+            <a href="nationalpage.html"><img src="https://i.pinimg.com/474x/be/2a/d2/be2ad28746bf03ec8226e3b652fbef4c.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$18</h3>
+            <p><strong>Japan Home Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="nationalpage.html"><img src="picture/Japan away.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$18</h3>
+            <p><strong>Japan Away Jersey</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/chelseaHome08.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Chelsea Home Jersey 07/08</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/Chelsea Home 13.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Chelsea Home Jersey 12/13</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/inter97-98.jpeg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Inter Milan Home 97/98</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/interaway98-99.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Inter Milan 97/98</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/Inter home 98.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Inter Milan 98/99</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/Inter away 93.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Inter Milan Away 92/93</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/Inter away 98.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Inter Milan Away 97/98</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/chelseaAway03-04.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Chelsea Away Jersey 03/04</strong></p>
+        </div>
+    
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/city11-12.jpg" alt="1998 Inter Milan Home Retro kit " ></a>
+            <h3>$30</h3>
+            <p><strong>Manchester city Home 11/12</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/cityhomw99-00.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Manchester City Home 99/00</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/mancityaway98-99.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Manchester City Away 98/99</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/mancityhone97-99.jpeg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Manchester City Home 97/99</strong></p>
+        </div>
+        <div class="item">
+            <a href="p4.html"><img src="picture/mancitythird13-14.jpg" alt="AS Roma 1993 Jersey"></a>
+            <h3>$25</h3>
+            <p><strong>Manchester City Third 13/14</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/cityaway16.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Manchester City Away 15/16</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/cityaway15.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Manchester City Away 14/15</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/city home 93.jpg" alt="Mental Health Awareness Jersey"></a>
+            <h3>$30</h3>
+            <p><strong>Manchester City Home 91/93</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/RealRetro2018.jpg" alt="1998 Inter Milan Home Retro kit " ></a>
+            <h3>$30</h3>
+            <p><strong>Real Madrid 17/18</strong></p>
+        </div>
+        <div class="item">
+            <a href="jerseypage.html"><img src="picture/Real 2017.jpg" alt="Brazil WorldCup 2002 retro kit "></a>
+            <h3>$30</h3>
+            <p><strong>Real Madrid 16/17</strong></p>
+        </div>
+        <div class="item">
+            <a href="p3.html"><img src="picture/Realretro 2007.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Real Madrid 06/07</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridhome12.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Home 11/12</strong></p>
+        </div>    
+        <div class="item">
+          <a href="p3.html"><img src="picture/madrid98-00.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid 98/00</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridAway10-11.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Away 10/11</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridaway99-01.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Away 99/01</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridHom13-14.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Home 13/14</strong></p>
+        </div>
+       
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridHome10-11.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Home 10/11</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridHome16-17.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Home 16/17</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridHome21-22.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Home 21/22</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madrid18.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Home 17/18</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madrid13.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Home 12/13</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridaway12.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Away 11/12</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madrid16.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Home 15/16</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridThird15.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Third 14/15</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridaway15.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Away 14/15</strong></p>
+        </div>
+        <div class="item">
+          <a href="p3.html"><img src="picture/madridaway14.jpg" alt="River Plate 1994 Jersey"></a>
+          <h3>$28</h3>
+          <p><strong>Real Madrid Away 13/14</strong></p>
+        </div>
+    </div>
+    <div id="page5" class="page-content">
+        <div class="item">
+            <a href="p3.html"><img src="picture/madridaway16.jpg" alt="River Plate 1994 Jersey"></a>
+            <h3>$28</h3>
+            <p><strong>Real Madrid Away 15/16</strong></p>
+          </div>
+      </div>
+  </div>
+  <div class="pagination">
+    <div id="prevBtn" class="page-btn disabled" onclick="changePage(-1)">← Prev</div>
+    <span id="pageNumber" class="page-number">1 / 4</span>
+    <div id="nextBtn" class="page-btn" onclick="changePage(1)">Next →</div>
+  </div>
+
+  <script>
+    const totalPages = 4;
+    let currentPage = 1;
+
+    const pages = document.querySelectorAll(".page-content");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const pageNumber = document.getElementById("pageNumber");
+
+    function changePage(step) {
+      currentPage += step;
+      pages.forEach((page, index) => {
+        page.classList.remove("active");
+        if (index + 1 === currentPage) {
+          page.classList.add("active");
+        }
+      });
+      window.scrollTo(0, 0);
+      pageNumber.textContent = `${currentPage} / ${totalPages}`;
+      prevBtn.classList.toggle("disabled", currentPage === 1);
+      nextBtn.classList.toggle("disabled", currentPage === totalPages);
+    }
+  </script>
+<div class="footer0">
+    <div class="container0">
+        <div class="row0">
+            <div class="footer0-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Our service</a></li>
+                    <li><a href="">Privacy policy</a></li>
+                    <li><a href="">Affilate program</a></li>
+                </ul>
+            </div>
+            <div class="footer0-col">
+                <h4>Get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Order status</a></li>
+                    <li><a href="#">Payment option</a></li>
+                </ul>
+            </div>
+            <div class="footer0-col">
+                <h4>Online shop</h4>
+                <ul>
+                    <li><a href="#">Club</a></li>
+                    <li><a href="#">Retro</a></li>
+                    <li><a href="#">National Team</a></li>
+                </ul>
+            </div>
+            <div class="footer0-col">
+                <h4>Follow us</h4>
+                <div class="social-link">
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

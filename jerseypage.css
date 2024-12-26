@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.product-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 20px;
+    color: #333;
+}
+
+.notice {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.color {
+    margin-bottom: 10px;
+}
+.clear {
+    clear: both;
+  }
+.sizes{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}  
+.checkBox {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 2px #271818;
+  }
+  
+.checkBox div {
+    width: 60px;
+    height: 60px;
+    background-color: #262020;
+    top: -52px;
+    left: -52px;
+    position: absolute;
+    transform: rotateZ(45deg);
+    z-index: 100;
+  }
+  
+.checkBox input[type=checkbox]:checked + div {
+    left: -10px;
+    top: -10px;
+  }
+  
+.checkBox input[type=checkbox] {
+    position: absolute;
+    left: 50px;
+    visibility: hidden;
+  }
+  
+.transition {
+    transition: 300ms ease;
+  }
+.add-to-bag {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+    margin: 15px 0;
+}
+
+.add-to-bag:hover {
+    background-color: #333;
+}
+
+.payment-info, .shipping-info {
+    font-size: 12px;
+    color: #555;
+}
+
+.payment-info a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.card {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+  }
+  
+
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 1s;
+  }
+ 
+  .containerOne:hover {
+    background-color: #d62976;
+    transition-duration: 0.3s;
+  }
+  
+  .containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: 0.3s;
+  }
+
+  .containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: 0.3s;
+  }
+
+  .containerFour:hover {
+    background-color: #128c7e;
+    transition-duration: 0.3s;
+  }
+  
+  .socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+  }
+  
+  .socialSvg {
+    width: 17px;
+  }
+  
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+

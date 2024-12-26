@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Swiper Container Styling */
+.swiper {
+    width: 80%;
+    height: 300px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+/* Initial hidden state for slides */
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: scale(0);
+    opacity: 0;
+    animation: popUp 0.5s ease forwards;
+}
+
+/* Delays for each slide */
+.swiper-slide:nth-child(1) {
+    animation-delay: 0s;
+}
+.swiper-slide:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.swiper-slide:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.swiper-slide:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+/* Pop-Up Animation Keyframes */
+@keyframes popUp {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+  </style>
+</head>
+<body>
+  <div class="display-shirt">
+    <div class="swiper second-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="#"><img src="https://i.pinimg.com/736x/5d/98/05/5d98051427b1f7a2070b2c9e2ebb26b3.jpg" alt="1998 Inter Milan Home Retro kit"></a>
+                <h3>Lazio Home 1999/2000</h3>
+                <p>Get it now</p>
+            </div>
+            <div class="swiper-slide">
+                <a href="p4.html"><img src="https://i.pinimg.com/736x/83/63/f0/8363f098dcb6af74d9655962acf6bc33.jpg" alt="Mental Health Awareness Jersey"></a>
+                <h3>Napoli 87/88</h3>
+                <p>Get it now</p>
+            </div>
+            <div class="swiper-slide">
+                <a href="#"><img src="https://i.pinimg.com/736x/6f/32/8f/6f328f524871afb989bc4db74d4cd66c.jpg" alt="River Plate 1994 Jersey"></a>
+                <h3>Barcelona 2015</h3>
+                <p>Get it now</p>
+            </div>
+            <div class="swiper-slide">
+                <a href="#"><img src="https://i.pinimg.com/736x/6d/39/e7/6d39e7c0ef1070d8c59942a276fda177.jpg" alt="Mental Health Awareness Jersey"></a>
+                <h3>Barcelona 98-99</h3>
+                <p>Get it now</p>
+            </div>
+        </div>
+        <div class="swiper-button-next second-next"></div>
+        <div class="swiper-button-prev second-prev"></div>
+    </div>
+</div>
+
+</body>
+</html>

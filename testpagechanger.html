@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination with Content</title>
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .page-content {
+      display: none; /* Hide all pages by default */
+    }
+
+    .page-content.active {
+      display: grid; /* Display active page */
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Container and Item Styling */
+    .item {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .item h3 {
+      color: #4CAF50;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .page-btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .page-btn:hover {
+      background-color: #45a049;
+    }
+
+    .page-btn.disabled {
+      background-color: #ddd;
+      color: #aaa;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <!-- Page 1 Content -->
+  <div id="page1" class="page-content active">
+    <div class="container">
+      <div class="item">
+        <a href="jerseypage.html"><img src="picture/bayernaway.jpg" alt="1998 Inter Milan Home Retro kit"></a>
+        <h3>$30</h3>
+        <p><strong>Bayern Munchen Away Jersey</strong></p>
+      </div>
+      <div class="item">
+        <a href="jerseypage.html"><img src="picture/bayernfirth.jpg" alt="Brazil WorldCup 2002 retro kit"></a>
+        <h3>$30</h3>
+        <p><strong>Bayern Munchen Fourth Jersey</strong></p>
+      </div>
+      <div class="item">
+        <a href="p3.html"><img src="picture/bayernhome.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$28</h3>
+        <p><strong>Bayern Munchen Home Jersey</strong></p>
+      </div>
+      <div class="item">
+        <a href="p4.html"><img src="picture/bayernThrid.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>Bayern Munchen Third Jersey</strong></p>
+      </div>
+      <div class="item">
+        <a href="p4.html"><img src="picture/dormunaway.jpg" alt="AS Roma 1993 Jersey"></a>
+        <h3>$25</h3>
+        <p><strong>Dortmund Away Jersey</strong></p>
+      </div>
+      <div class="item">
+        <a href="p3.html"><img src="picture/dortmunhome.jpg" alt="River Plate 1994 Jersey"></a>
+        <h3>$28</h3>
+        <p><strong>Dortmund Home Jersey</strong></p>
+      </div>
+      <div class="item">
+        <a href="jerseypage.html"><img src="picture/dortmunthird.jpg" alt="Mental Health Awareness Jersey"></a>
+        <h3>$30</h3>
+        <p><strong>Dortmund Third Jersey</strong></p>
+      </div>
+      <div class="item">
+        <a href="p8.html"><img src="picture/leverkusenHome.jpg" alt="AS Roma 1993 Jersey"></a>
+        <h3>$22</h3>
+        <p><strong>Leverkusen Home Jersey</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 2 Placeholder -->
+  <div id="page2" class="page-content">
+    <h2>Welcome to Page 2</h2>
+    <p>Additional content for Page 2 can go here.</p>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <div id="prevBtn" class="page-btn disabled" onclick="changePage(-1)">← Prev</div>
+    <span id="pageNumber" class="page-number">1 / 2</span>
+    <div id="nextBtn" class="page-btn" onclick="changePage(1)">Next →</div>
+  </div>
+
+  <script>
+    const totalPages = 2;
+    let currentPage = 1;
+
+    const pages = document.querySelectorAll(".page-content");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const pageNumber = document.getElementById("pageNumber");
+
+    function changePage(step) {
+      currentPage += step;
+
+      // Hide all pages and show the active one
+      pages.forEach((page, index) => {
+        page.classList.remove("active");
+        if (index + 1 === currentPage) {
+          page.classList.add("active");
+        }
+      });
+      window.scrollTo(0, 0);
+
+      // Update page number
+      pageNumber.textContent = `${currentPage} / ${totalPages}`;
+
+      // Enable/disable buttons
+      prevBtn.classList.toggle("disabled", currentPage === 1);
+      nextBtn.classList.toggle("disabled", currentPage === totalPages);
+    }
+  </script>
+</body>
+</html>

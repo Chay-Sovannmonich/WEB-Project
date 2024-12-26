@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .cart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+
+        .cart-item img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .cart-item-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .cart-item-size {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .cart-item-price {
+            font-size: 18px;
+            color: #ff4d4d;
+            font-weight: bold;
+        }
+
+        .cart-summary {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            font-size: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+        }
+
+        .total-price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .checkout-button {
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkout-button:hover {
+            background-color: #007bff;
+        }
+
+        .empty-cart-message {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Your Shopping Cart</h1>
+
+    <div class="cart-container">
+
+        <div id="cart-container" class="cart-items">
+ 
+        </div>
+
+        <div class="cart-summary">
+            <p class="total-price">Total: $<span id="total-price">18.00</span></p>
+            <button class="checkout-button">Proceed to Checkout</button>
+        </div>
+
+
+    </div>
+</body>
+</html>

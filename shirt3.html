@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container10 {
+            display: flex;
+            width: 70vw;
+            height: 70vh;
+            background-color: #ffffff;
+        }
+
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            background-color: #f9f9f9;
+            padding: 14px;
+        }
+
+        .image-section img {
+            width: 70%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .details-section {
+            flex: 1;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+        }
+
+        .details-section h1 {
+            font-size: 38px;
+            margin-bottom: 14px;
+        }
+
+        .details-section .price {
+            font-size: 26.6px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: red;
+            margin: 7px 196px;
+        }
+
+        .details-section .original-price {
+            font-size: 25.2px;
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .size-selector {
+            display: flex;
+            justify-content: center;
+        }
+
+        .size-button {
+            border: 1px solid #ccc;
+            padding: 7px 14px;
+            margin: 3.5px;
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .selected {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .details-section .add-to-cart {
+            text-align: center;
+            display: inline-block;
+            padding: 10.5px 17.5px;
+            background-color: black;
+            color: white;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4.2px;
+            cursor: pointer;
+            font-size: 11.2px;
+            margin-top: 14px;
+            margin-bottom: 7px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .details-section .add-to-cart:hover {
+            background-color: black;
+            transform: scale(1.05);
+        }
+        .details-section .info p {
+            font-size: 9.8px;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container10">
+        <div class="image-section">
+            <img id="product-image" src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/463627850_1114861220640160_418388204492857121_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=EdNzsMxebEYQ7kNvgH9lQ3A&_nc_zt=23&_nc_ht=scontent.fpnh19-1.fna&_nc_gid=AG5ksXboTJRJQlyoSbIrObt&oh=00_AYA1dhV4Jl6zqql5G9HAdNWJx08e8ehhDqhOCvd3WHgqiQ&oe=675C6678" alt="Mental Health Awareness Jersey">
+        </div>
+        <div class="details-section">
+            <h1>Cambodia goalkeeper's Home Jersey</h1>
+            <div class="price">
+                <span class="original-price">$90.00</span> $45.00
+            </div>
+
+            <div class="size-selector">
+                <button class="size-button" data-size="XXS">XXS</button>
+                <button class="size-button" data-size="XS">XS</button>
+                <button class="size-button" data-size="S">S</button>
+                <button class="size-button" data-size="M">M</button>
+                <button class="size-button" data-size="L">L</button>
+                <button class="size-button" data-size="XL">XL</button>
+                <button class="size-button" data-size="XXL">XXL</button>
+                <button class="size-button" data-size="3XL">3XL</button>
+            </div>
+            <a href="shoppingcard.html" class="add-to-cart">
+                <button class="add-to-cart">Add to Cart</button>
+            </a>
+            <div class="info">
+                <h3>Details:</h3>
+                <p>A stylish, durable jersey with contrast details, perfect for sports or casual wear.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const sizeButtons = document.querySelectorAll('.size-button');
+        
+        sizeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+
+                sizeButtons.forEach(btn => btn.classList.remove('selected'));
+                button.classList.add('selected');
+                console.log(`Selected size: ${button.dataset.size}`);
+            });
+        });
+    </script>
+    
+</body>
+</html>

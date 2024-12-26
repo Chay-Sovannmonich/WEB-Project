@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        .discount {
+            display: flex;
+            justify-content: center;
+        }
+        .cart .sc {
+            padding-left: 380px;
+            padding-top: 30px;
+            font-size: 30px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ccc; 
+            margin-left: 100px;
+            margin-top: 30px;
+            width: 62.4%;
+        }
+        .cart .empty{
+            padding-left: 380px;
+            padding-top: 30px;
+            font-size: 15px; 
+        }
+        .recom .sc {
+            padding-left: 380px;
+            padding-top: 30px;
+            font-size: 30px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ccc; 
+            margin-left: 100px;
+            margin-top: 30px;
+            width: 62.4%;
+        }
+        .recom .empty{
+            padding-left: 380px;
+            padding-top: 30px;
+            font-size: 20px; 
+        }
+        .swiper {
+            width: 50%;
+            height: 300px;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            height: auto; 
+            max-width: 100%; 
+            margin: 0 auto;           
+        }
+        footer {
+            width: 100%;
+            height: 150px;
+            background-color: rgb(238, 241, 241);
+            margin-top: 50px;
+        }
+        .continue a {
+            text-decoration: none; 
+            
+        }
+
+        .continue button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 470px;
+            border-radius: 30px;
+            width: 600px;
+            height: 60px;
+            border: 2px solid;
+            cursor: pointer;
+        }
+        .footer hr {            
+            border: none;
+            border-top: 1px solid #ccc; 
+
+            width: 90%;  
+        }
+        .footer p{
+            padding-top: 30px;
+            padding-left: 300px;
+        }
+        @media screen and (max-width:426px) and (min-width:375px) {
+           nav .wrapper{
+            width: 425px;
+            padding:0px 0px;
+            justify-content: space-around;
+           }
+           .wrapper .logo a{
+            font: 8px;
+           }
+           .wrapper .nav-links {
+                display: flex;
+                justify-content: space-between;
+            }
+            .nav-links li a {
+                font-size: 7px;
+            }
+            .wrapper .icon a{
+                font-size: 8px;
+            }
+            nav{
+                width:425px;
+            }
+        }
+        @media screen and (max-width:769px) and (min-width:425px){
+            nav .wrapper{
+                width:768px;
+                padding:0px 0px;
+                margin:0px 0px 0px 10px;
+                justify-content: space-around;
+            }
+            .wrapper .logo a {
+                font-size: 15px;
+            }
+            .wrapper .nav-links {
+                display: flex;
+                justify-content: space-between;
+            }
+            .nav-links li a {
+                font-size: 13px;
+            }
+            .wrapper .icon a{
+                font-size: 17px;
+            }
+            nav{
+                width:768px;
+            }
+            .discount img{
+                width: 100%;;
+                margin-top: 70px;
+            }
+            .continue a button {
+                margin-top: 50px;
+                margin-left: 100px;
+            }
+            .footer p{
+                padding-left: 100px;
+            }
+            .cart .sc {
+                padding-left: 1px; 
+                text-align: left; 
+            }
+            .cart .empty{
+                padding-left: 1px; 
+                text-align: left; 
+            }
+            .recom .sc {
+                padding-left: 1px; 
+                text-align: left; 
+            }
+            .recom .empty {
+                padding-left: 1px; 
+                text-align: left; 
+            }
+            .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+                width: 81%;
+                margin-left: 100px;
+            }
+            .swiper-slide img{
+                margin-top: 50px;
+                
+            }
+        }
+        @media screen and (max-width: 1029px) and (min-width:769px) {
+            nav .wrapper{
+                width: 1028px;
+                padding: 0px 0px;
+                justify-content: space-around;
+            }
+            .cart .sc {
+                padding-left: 1px; 
+                text-align: left; 
+            }
+            .cart .empty{
+                padding-left: 1px; 
+                text-align: left; 
+            }
+            .recom .sc {
+                padding-left: 1px; 
+                text-align: left; 
+            }
+            .recom .empty {
+                padding-left: 1px; 
+                text-align: left; 
+            }
+            .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+                width: 81%;
+                margin-left: 100px;
+            }
+            .continue a button {
+                margin-top: 20px;
+                margin-left: 100px;
+            }
+            .footer p{
+                padding-left: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="landing.html">KhmerKits</a></div>
+            <input type="radio" name="slider" id="menu-btn">
+            <input type="radio" name="slider" id="close-btn">
+            <ul class="nav-links">
+                <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                <li><a href="shop.html">SHOP</a></li>
+                <li>
+                    <a href="#" class="desktop-item">COLLECTIONS</a>
+                    <input type="checkbox" id="showMega">
+                    <label for="showMega" class="mobile-item">Mega Menu</label>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <img src="picture/bestpic.jpg" alt="">
+                            </div>
+                            <div class="row">
+                              <header>League</header>
+                              <ul class="mega-links">
+                                  <li><a href="PremierLeague.html">Premier League</a></li>
+                                  <li><a href="LaLiga.html">La Liga</a></li>
+                                  <li><a href="SeriaA.html">Seria A</a></li>
+                                  <li><a href="Budesliga.html">Bundesliga</a></li>
+                                  <li><a href="Otherleague.html">Others</a></li>
+                              </ul>
+                          </div>
+                          <div class="row">
+                              <header>Retro</header>
+                              <ul class="mega-links">
+                                  <li><a href="Acmilan.html">AC Milan</a></li>
+                                  <li><a href="Realmadrid.html">Real MAdrid</a></li>
+                                  <li><a href="Barcelona.html">Barcelona</a></li>
+                                  <li><a href="Liverpool.html">Liverpool</a></li>
+                                  <li><a href="Manchester.html">Manchester</a></li>
+                                  <li><a href="Juventus.html">Juventus</a></li>
+                                  <li><a href="Otherretro.html">Others</a></li>
+                              </ul>
+                          </div>
+                          <div class="row">
+                              <header>National Team</header>
+                              <ul class="mega-links">
+                                  <li><a href="Argentina.html">Argentina</a></li>
+                                  <li><a href="France.html">France</a></li>
+                                  <li><a href="Portugal.html">Portugal</a></li>
+                                  <li><a href="Germany.html">Germany</a></li>
+                                  <li><a href="Spain.html">Spain</a></li>
+                                  <li><a href="Brazil.html">Brazil</a></li>
+                                  <li><a href="Japan.html">Japan</a></li>
+                              </ul>
+                          </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="about.html">ABOUT</a></li>             
+            </ul>  
+            <div class="icon">
+                <a href="login.html" class="icon-button"><i class="fa-solid fa-circle-user"></i></a>
+                <a href="shoppingcard.html" class="icon-button"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>                       
+        </div>
+    </nav>
+    <div class="discount">
+        <img src="picture/discount.jpg" alt="">
+    </div>
+    <div class="cart">
+        <div class="sc">
+            <p>Shopping cart</p>
+            <hr>
+        </div>
+        <div class="empty">
+            <p>Your cart is currently empty</p>
+        </div>
+    </div>
+    <div class="recom">
+        <div class="sc">
+            <p>Recommanded For You</p>
+            <hr>
+        </div>
+        <div class="empty">
+            <p>Best Sellers</p>
+        </div>
+    </div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">              
+                <a href="khpage.html"><img src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/463027511_1111063561019926_574465386252491651_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6A2UtN22qG4Q7kNvgHRItzl&_nc_zt=23&_nc_ht=scontent.fpnh19-1.fna&_nc_gid=AoYsIejj7hHIticqzuVCymC&oh=00_AYAUPe6OuL6Q952czwDUkr0bWNXorMq5ZzC-eYAM8BnJfQ&oe=675C68AE" alt="Brazil WorldCup 2002 retro kit "></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="khpage.html"><img src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/462603233_1107959617996987_7602136492595329439_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=GfvKxmfJwdoQ7kNvgFx_kPq&_nc_zt=23&_nc_ht=scontent.fpnh19-1.fna&_nc_gid=AzPXiiB2PQawMEJaaPd8hFS&oh=00_AYDicRUGbfvuldaRGI7gNNHKqQWYPKyaPcyd_JdSvTtuCg&oe=675C67CB" alt="1998 Inter Milan Home Retro kit " ></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="khpage.html"><img src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/463627850_1114861220640160_418388204492857121_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=EdNzsMxebEYQ7kNvgH9lQ3A&_nc_zt=23&_nc_ht=scontent.fpnh19-1.fna&_nc_gid=AG5ksXboTJRJQlyoSbIrObt&oh=00_AYA1dhV4Jl6zqql5G9HAdNWJx08e8ehhDqhOCvd3WHgqiQ&oe=675C6678" alt="Mental Health Awareness Jersey"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="khpage.html"><img src="https://scontent.fpnh19-1.fna.fbcdn.net/v/t39.30808-6/463304741_1112051320921150_5968192218143570033_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=x6w5QeA-a7MQ7kNvgGW2pe4&_nc_zt=23&_nc_ht=scontent.fpnh19-1.fna&_nc_gid=AFEcdZCjtej3fxVyrK57HGB&oh=00_AYDAG_dAzUy5_QvKJKk4UTsbxeRkoDIDNmaBHxArDFhELQ&oe=675C77F6" alt="River Plate 1994 Jersey"></a>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    spaceBetween: 10, 
+    slidesPerView: 4, 
+    centeredSlides: false, 
+    });
+</script>
+<div class="continue">
+    <a href="shop.html"><button>CONTINUE SHOPPING</button></a>
+</div>
+<footer>
+    <div class="footer">
+        <p>Thank you for visiting our page</p>
+        <hr>
+        <p>Copy © KhmerKits., Ltd ALL rights reserved</p>
+    </div>  
+</footer> 
+<script>
+    const cartContainer = document.getElementById('cart-container');
+    const cartItem = JSON.parse(localStorage.getItem('cartItem'));
+
+    if (cartItem) {
+        cartContainer.innerHTML = `
+            <div class="cart-item">
+                <img src="${cartItem.image}" alt="${cartItem.name}" style="width: 100px; height: auto;">
+                <div>
+                    <h3>${cartItem.name}</h3>
+                    <p>Size: ${cartItem.size}</p>
+                    <p>Price: ${cartItem.price}</p>
+                </div>
+            </div>
+        `;
+    } else {
+        cartContainer.innerHTML = '<p>Your cart is currently empty.</p>';
+    }
+</script> 
+</body>
+</html>
